@@ -54,7 +54,7 @@ class TaskTableViewController: UITableViewController, UISearchBarDelegate, UISea
                let task = tasks![indexPath.row]
                let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell")
                cell?.textLabel?.text = task.title
-               cell?.detailTextLabel?.text = "\(task.incrementer) days needed to complete the task"
+               cell?.detailTextLabel?.text = "\(task.days) days needed to complete the task"
         
                 if tasks?[indexPath.row].incrementer == self.tasks?[indexPath.row].days{
                     cell?.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)

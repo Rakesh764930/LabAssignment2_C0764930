@@ -41,10 +41,12 @@ class ViewController: UIViewController {
                 
         let task = Task(title: title, days: days)
         tasks?.append(task)
+        saveCoreData()
                    for textField in txtDetails {
                        textField.text = ""
                        textField.resignFirstResponder()
                    }
+        
     }
     
     @objc func saveCoreData(){
@@ -56,7 +58,7 @@ class ViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                
                            // context
-                           let ManagedContext = appDelegate.persistentContainer.viewContext
+        let ManagedContext = appDelegate.persistentContainer.viewContext
         for task in tasks! {
                                let taskEntity = NSEntityDescription.insertNewObject(forEntityName: "TaskEntity", into: ManagedContext)
                               taskEntity.setValue(task.title, forKey: "title")
