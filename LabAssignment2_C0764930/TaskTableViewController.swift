@@ -29,6 +29,12 @@ class TaskTableViewController: UITableViewController, UISearchBarDelegate, UISea
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        tasks?.removeAll()
+        self.loadCoreData()
+        tableView.reloadData()
+        
+    }
 
     // MARK: - Table view data source
 
@@ -48,10 +54,10 @@ class TaskTableViewController: UITableViewController, UISearchBarDelegate, UISea
                let task = tasks![indexPath.row]
                let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell")
                cell?.textLabel?.text = task.title
-               cell?.detailTextLabel?.text = "\(task.days) days + \(task.incrementer) completed days"
+               cell?.detailTextLabel?.text = "\(task.incrementer) days needed to complete the task"
         
                 if tasks?[indexPath.row].incrementer == self.tasks?[indexPath.row].days{
-                    cell?.backgroundColor = #colorLiteral(red: 0.1294117719, green: 0.2156862766, blue: 0.06666667014, alpha: 1)
+                    cell?.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
                     cell?.textLabel?.text = "Completed"
                     cell?.detailTextLabel?.text = ""
                     
@@ -60,35 +66,35 @@ class TaskTableViewController: UITableViewController, UISearchBarDelegate, UISea
                return cell!
         
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
-    }
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 150
+//    }
     
     
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
             let Addaction = UITableViewRowAction(style: .normal, title: "Add Day") { (rowaction, indexPath) in
                 print("add day clicked")
-                let alertcontroller = UIAlertController(title: "Add Day", message: "Enter a day for this task", preferredStyle: .alert)
+                let alertcontroller = UIAlertController(title: "Add Days", message: nil, preferredStyle: .alert)
                                
                                alertcontroller.addTextField { (textField ) in
-                                               textField.placeholder = "number of days"
+                                               textField.placeholder = "enter the number of days"
                                 self.addDay = textField.text!
                                 print(self.addDay)
                                 
                                    textField.text = ""
                                 
                                }
-                               let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                               let CancelAction = UIAlertAction(title: "Quit", style: .cancel, handler: nil)
                                CancelAction.setValue(UIColor.brown, forKey: "titleTextColor")
-                               let AddItemAction = UIAlertAction(title: "Add Item", style: .default){
+                               let AddItemAction = UIAlertAction(title: "Add", style: .default){
                                    (action) in
                                 let count = alertcontroller.textFields?.first?.text
                                 self.tasks?[indexPath.row].incrementer += Int(count!) ?? 0
                                 
                                 if self.tasks?[indexPath.row].incrementer == self.tasks?[indexPath.row].days{
                                     
-                                    print("equal")
+                                   
 //
                                                
                                             
@@ -221,7 +227,7 @@ class TaskTableViewController: UITableViewController, UISearchBarDelegate, UISea
 
 
                      tasks?.append(Task(title: title, days: days))
-                     tableView.reloadData()
+                     //tableView.reloadData()
                  }
              }
          } catch{
@@ -292,8 +298,8 @@ class TaskTableViewController: UITableViewController, UISearchBarDelegate, UISea
 
    
     @IBAction func sortByName(_ sender: Any) {
-        let itemSort = self.tasks!
-                   self.tasks! = itemSort.sorted { $0.title < $1.title }
+        let item = self.tasks!
+                   self.tasks! = item.sorted { $0.title < $1.title }
                       self.tableView.reloadData()
     }
     

@@ -62,16 +62,16 @@
 		9B93595923D7983900A01A3E /* LabAssignment2_C0764930 */ = {
 			isa = PBXGroup;
 			children = (
+				9B93595E23D7983900A01A3E /* ViewController.swift */,
+				9B93597323D79DC900A01A3E /* TaskTableViewController.swift */,
+				9B93597123D79D9300A01A3E /* Task.swift */,
+				9B93596323D7983900A01A3E /* LabAssignment2_C0764930.xcdatamodeld */,
 				9B93595A23D7983900A01A3E /* AppDelegate.swift */,
 				9B93595C23D7983900A01A3E /* SceneDelegate.swift */,
-				9B93595E23D7983900A01A3E /* ViewController.swift */,
 				9B93596023D7983900A01A3E /* Main.storyboard */,
 				9B93596623D7983A00A01A3E /* Assets.xcassets */,
-				9B93597123D79D9300A01A3E /* Task.swift */,
 				9B93596823D7983A00A01A3E /* LaunchScreen.storyboard */,
 				9B93596B23D7983A00A01A3E /* Info.plist */,
-				9B93596323D7983900A01A3E /* LabAssignment2_C0764930.xcdatamodeld */,
-				9B93597323D79DC900A01A3E /* TaskTableViewController.swift */,
 			);
 			path = LabAssignment2_C0764930;
 			sourceTree = "<group>";
