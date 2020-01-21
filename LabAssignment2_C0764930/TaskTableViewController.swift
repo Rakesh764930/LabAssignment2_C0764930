@@ -273,7 +273,7 @@ class TaskTableViewController: UITableViewController, UISearchBarDelegate, UISea
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TaskEntity")
             fetchRequest.predicate = predicate
             do{
-                tasks = try ManagedContext.fetch(fetchRequest) as? [Task]
+               tasks = try ManagedContext.fetch(fetchRequest) as? [Task]
             }
             catch{
                 print("error")

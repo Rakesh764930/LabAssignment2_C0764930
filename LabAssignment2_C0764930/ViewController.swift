@@ -45,13 +45,13 @@ class ViewController: UIViewController {
                        textField.text = ""
                        textField.resignFirstResponder()
                    }
-        saveCoreData()
     }
     
     @objc func saveCoreData(){
         
-            
+       // call clear core data
         clearCoreData()
+        
         //create an instance of app delegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
                
                                print("days: \(task.days)")
                            }
-        //loadCoreData()
+        loadCoreData()
     }
     
     func loadCoreData(){
