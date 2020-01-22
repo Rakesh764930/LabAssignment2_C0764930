@@ -13,10 +13,12 @@ class Task{
     init(title: String, days: Int) {
         self.title = title
         self.days = days
+      
     }
     
     var title: String
     var days: Int
     var incrementer = 0
+    
     
 }

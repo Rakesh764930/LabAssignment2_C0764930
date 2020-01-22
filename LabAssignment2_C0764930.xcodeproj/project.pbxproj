@@ -16,6 +16,7 @@
 		9B93596A23D7983A00A01A3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B93596823D7983A00A01A3E /* LaunchScreen.storyboard */; };
 		9B93597223D79D9300A01A3E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B93597123D79D9300A01A3E /* Task.swift */; };
 		9B93597423D79DC900A01A3E /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B93597323D79DC900A01A3E /* TaskTableViewController.swift */; };
+		9BE9A50223D7DFCF00E316A3 /* dateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE9A50123D7DFCF00E316A3 /* dateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9B93596B23D7983A00A01A3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B93597123D79D9300A01A3E /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		9B93597323D79DC900A01A3E /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
+		9BE9A50123D7DFCF00E316A3 /* dateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				9B93595E23D7983900A01A3E /* ViewController.swift */,
 				9B93597323D79DC900A01A3E /* TaskTableViewController.swift */,
+				9BE9A50123D7DFCF00E316A3 /* dateFormatter.swift */,
 				9B93597123D79D9300A01A3E /* Task.swift */,
 				9B93596323D7983900A01A3E /* LabAssignment2_C0764930.xcdatamodeld */,
 				9B93595A23D7983900A01A3E /* AppDelegate.swift */,
@@ -150,6 +153,7 @@
 				9B93597423D79DC900A01A3E /* TaskTableViewController.swift in Sources */,
 				9B93595F23D7983900A01A3E /* ViewController.swift in Sources */,
 				9B93596523D7983900A01A3E /* LabAssignment2_C0764930.xcdatamodeld in Sources */,
+				9BE9A50223D7DFCF00E316A3 /* dateFormatter.swift in Sources */,
 				9B93597223D79D9300A01A3E /* Task.swift in Sources */,
 				9B93595B23D7983900A01A3E /* AppDelegate.swift in Sources */,
 				9B93595D23D7983900A01A3E /* SceneDelegate.swift in Sources */,

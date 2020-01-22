@@ -78,7 +78,7 @@
         <!--View Controller-->
         <scene sceneID="A5X-fQ-xvl">
             <objects>
-                <viewController id="ETT-TW-Pw1" customClass="ViewController" customModule="LabAssignment2_C0764930" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Vc" id="ETT-TW-Pw1" customClass="ViewController" customModule="LabAssignment2_C0764930" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wqb-gf-yca">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

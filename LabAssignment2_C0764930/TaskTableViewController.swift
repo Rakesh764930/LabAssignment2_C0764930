@@ -71,22 +71,30 @@ class TaskTableViewController: UITableViewController, UISearchBarDelegate, UISea
 //    }
     
     
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let edit = UIContextualAction(style: .normal,title: "Edit"){ (action, view, completion:(Bool)->()) in
+ self.performSegue(withIdentifier: "Vc", sender: nil)
+        }
+        edit.backgroundColor=#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        return UISwipeActionsConfiguration(actions: [edit])
+    }
+    
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
             let Addaction = UITableViewRowAction(style: .normal, title: "Add Day") { (rowaction, indexPath) in
+               
                 print("add day clicked")
                 let alertcontroller = UIAlertController(title: "Add Days", message: nil, preferredStyle: .alert)
                                
                                alertcontroller.addTextField { (textField ) in
                                                textField.placeholder = "enter the number of days"
                                 self.addDay = textField.text!
-                                print(self.addDay)
                                 
                                    textField.text = ""
                                 
                                }
                                let CancelAction = UIAlertAction(title: "Quit", style: .cancel, handler: nil)
-                               CancelAction.setValue(UIColor.brown, forKey: "titleTextColor")
+                               CancelAction.setValue(UIColor.yellow, forKey: "titleTextColor")
                                let AddItemAction = UIAlertAction(title: "Add", style: .default){
                                    (action) in
                                 let count = alertcontroller.textFields?.first?.text
@@ -112,7 +120,7 @@ class TaskTableViewController: UITableViewController, UISearchBarDelegate, UISea
                                              alertcontroller.addAction(AddItemAction)
                                              self.present(alertcontroller, animated: true, completion: nil)
             }
-            Addaction.backgroundColor = UIColor.blue
+            Addaction.backgroundColor = UIColor.yellow
             
     
             let deleteaction = UITableViewRowAction(style: .normal, title: "Delete") { (rowaction, indexPath) in
@@ -267,7 +275,7 @@ class TaskTableViewController: UITableViewController, UISearchBarDelegate, UISea
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != ""{
             var predicate: NSPredicate = NSPredicate()
-            predicate = NSPredicate(format: "title contains %@", "\(searchText)")
+            predicate = NSPredicate(format: "title=%@", "\(searchText)")
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let ManagedContext = appDelegate.persistentContainer.viewContext
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TaskEntity")
