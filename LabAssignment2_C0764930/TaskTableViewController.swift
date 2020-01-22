@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class TaskTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
+class TaskTableViewController:  UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     
 
     
