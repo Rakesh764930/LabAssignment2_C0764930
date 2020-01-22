@@ -84,7 +84,7 @@ class ViewController: UIViewController {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 
                 // context
-                let ManagedContext = appDelegate.persistentContainer.viewContext
+                let ManagedContext =  appDelegate.persistentContainer.viewContext
          
          let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TaskEntity")
         
